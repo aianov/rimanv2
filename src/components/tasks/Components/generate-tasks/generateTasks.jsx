@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import tasks from '../../tasks.module.scss';
 
-export const GenerateTasks = () => {
+export const GenerateTasks = ({ tasksGenerate }) => {
     const [containerStates, setContainerStates] = useState({
         Var1: false, Var2: false, Var3: false, Var4: false, Var5: false, Var6: false, Var7: false, Var8: false,
     });
@@ -51,6 +51,7 @@ export const GenerateTasks = () => {
         console.log(containerStates2)
         console.log(containerStates3)
         console.log(containerStates4)
+        tasksGenerate('http://178.21.8.81/api/themes/')
     }
 
     return (
@@ -60,7 +61,7 @@ export const GenerateTasks = () => {
                     <div className={`${tasks.top} df jcsb w100`}>
                         <p className='tac w50'>Укажи параметры и нажми на кнопку</p>
                         <div className={`${tasks.topbtn} df jcc aic w50`}>
-                            <div className={`${tasks.btn} df jcc aic cp`}>
+                            <div className={`${tasks.btn} df jcc aic cp`} onClick={setGeneric}>
                                 Создать
                             </div>
                         </div>

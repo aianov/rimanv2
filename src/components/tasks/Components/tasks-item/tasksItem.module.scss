@@ -1,0 +1,49 @@
+.container {
+    padding: 15px 100px;
+    @media (max-width: 800px) {
+        padding: 15px 50px;
+    }
+    @media (max-width: 600px) {
+        padding: 15px 10px;
+    }
+    .item {
+        border: 1px solid rgba(255, 255, 255, 0.1098039216);
+        border-radius: 20px;
+        padding: 10px 15px;
+        .bar {
+            .left {
+                font-size: 30px;
+            }
+            .right {
+                svg {
+                    transition: .2s ease-in-out;
+                }
+                svg:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .middle {
+            .image {
+                margin: 10px 0px 20px 0px;
+            }
+        }
+        .bottom {
+            @media (max-width: 400px) {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                .left {
+                    margin-top: 5px;
+                }
+            }
+            .left {
+                input {
+                    border: 1px solid #55ff9c;
+                    border-radius: 10px;
+                    background: none;
+                    padding: 2px 5px;
+                }
+            }
+        }
+    }
+}

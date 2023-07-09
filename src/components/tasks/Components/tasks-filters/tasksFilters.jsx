@@ -368,70 +368,68 @@ export const TasksFilters = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`${tasks.block} w100`}>
-                    {/* TASKS */}
-                    <div className={tasks.tasks}>
-                        <div className={`${tasks.chooseitem2} w100 df jcsb`}>
-                            <p>Задания:</p>
-                            <select name="chooseitem">
-                                <option value="1" selected>1 задание</option>
-                            </select>
+                {/* TASKS */}
+                <div className={tasks.tasks}>
+                    <div className={`${tasks.chooseitem2} w100 df jcsb`}>
+                        <p>Задания:</p>
+                        <select name="chooseitem">
+                            <option value="1" selected>1 задание</option>
+                        </select>
+                    </div>
+                    <div className={`${tasks.chooseitem2} w100 df jcsb`}>
+                        <div className={`${tasks.create} df jcc aic h100 cp`} onClick={handleAddTasks}>
+                            <BsPlus size={25} />
                         </div>
-                        <div className={`${tasks.chooseitem2} w100 df jcsb`}>
-                            <div className={`${tasks.create} df jcc aic h100 cp`} onClick={handleAddTasks}>
-                                <BsPlus size={25} />
+                        <div className={`${tasks.inpbtns} df jcsb aic h100`}>
+                            <div className={`${tasks.inpbtn} df jcsb aic h100 cp`} onClick={tasksMinus}>
+                                <BiMinus size={25} />
                             </div>
-                            <div className={`${tasks.inpbtns} df jcsb aic h100`}>
-                                <div className={`${tasks.inpbtn} df jcsb aic h100 cp`} onClick={tasksMinus}>
-                                    <BiMinus size={25} />
-                                </div>
-                                <input
-                                    type="text"
-                                    value={tasksNum}
-                                    className={`${tasks.input} tac cw`}
-                                    onChange={(e) => tasksHandler(e.target.value)}
-                                />
-                                <div className={`${tasks.plus} df jcc aic h100 cp`} onClick={tasksPlus}>
-                                    <BsPlus size={25} />
-                                </div>
+                            <input
+                                type="text"
+                                value={tasksNum}
+                                className={`${tasks.input} tac cw`}
+                                onChange={(e) => tasksHandler(e.target.value)}
+                            />
+                            <div className={`${tasks.plus} df jcc aic h100 cp`} onClick={tasksPlus}>
+                                <BsPlus size={25} />
                             </div>
                         </div>
                     </div>
-                    {filtersTasks.map(({ id }) => (
-                        <FilterTasks key={id} id={id} onDeleteTask={handleDeleteTasks} />
-                    ))}
-                    {/* PODTIP */}
-                    <div className={tasks.tasks}>
-                        <div className={`${tasks.chooseitem2} w100 df jcsb`}>
-                            <p>Подтип:</p>
-                            <select name="chooseitem">
-                                <option value="1" selected>Треугольники</option>
-                            </select>
-                        </div>
-                        <div className={`${tasks.chooseitem2} w100 df jcsb`}>
-                            <div className={`${tasks.create} df jcc aic h100 cp`} onClick={handleAddPodtip}>
-                                <BsPlus size={25} />
-                            </div>
-                            <div className={`${tasks.inpbtns} df jcsb aic h100`}>
-                                <div className={`${tasks.inpbtn} df jcsb aic h100 cp`} onClick={podtipMinus}>
-                                    <BiMinus size={25} />
-                                </div>
-                                <input
-                                    type="text"
-                                    value={podtipNum}
-                                    className={`${tasks.input} tac cw`}
-                                    onChange={(e) => podtipHandler(e.target.value)}
-                                />
-                                <div className={`${tasks.plus} df jcc aic h100 cp`} onClick={podtipPlus}>
-                                    <BsPlus size={25} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {filtersPodtip.map(({ id }) => (
-                        <FilterPodtip key={id} id={id} onDeleteTask={handleDeletePodtip} />
-                    ))}
                 </div>
+                {filtersTasks.map(({ id }) => (
+                    <FilterTasks key={id} id={id} onDeleteTask={handleDeleteTasks} />
+                ))}
+                {/* PODTIP */}
+                <div className={tasks.tasks}>
+                    <div className={`${tasks.chooseitem2} w100 df jcsb`}>
+                        <p>Подтип:</p>
+                        <select name="chooseitem">
+                            <option value="1" selected>Треугольники</option>
+                        </select>
+                    </div>
+                    <div className={`${tasks.chooseitem2} w100 df jcsb`}>
+                        <div className={`${tasks.create} df jcc aic h100 cp`} onClick={handleAddPodtip}>
+                            <BsPlus size={25} />
+                        </div>
+                        <div className={`${tasks.inpbtns} df jcsb aic h100`}>
+                            <div className={`${tasks.inpbtn} df jcsb aic h100 cp`} onClick={podtipMinus}>
+                                <BiMinus size={25} />
+                            </div>
+                            <input
+                                type="text"
+                                value={podtipNum}
+                                className={`${tasks.input} tac cw`}
+                                onChange={(e) => podtipHandler(e.target.value)}
+                            />
+                            <div className={`${tasks.plus} df jcc aic h100 cp`} onClick={podtipPlus}>
+                                <BsPlus size={25} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {filtersPodtip.map(({ id }) => (
+                    <FilterPodtip key={id} id={id} onDeleteTask={handleDeletePodtip} />
+                ))}
                 {/* TIMER */}
                 <div className={`${tasks.timer} df jcsb fww w100`}>
                     <p>Таймер:</p>

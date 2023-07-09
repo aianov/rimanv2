@@ -29,22 +29,18 @@
             }
         }
 
-        .block {
-            display: flex;
+        .tasks {
+            width: 100%;
 
-            .tasks {
-                width: 100%;
-
-                .chooseitem2 {
-                    select {
-                        width: 100%;
-                    }
+            .chooseitem2 {
+                select {
+                    width: 100%;
                 }
             }
+        }
 
-            .tasks:first-child {
-                margin-right: 10px;
-            }
+        .tasks:first-child {
+            margin-right: 10px;
         }
 
         .timer {
@@ -96,8 +92,6 @@
         }
 
         .logo {
-            margin-left: 50px;
-
             img {
                 width: 50%;
             }
@@ -106,12 +100,6 @@
         .filters {
             height: auto;
             margin-top: 50px;
-
-            @media (max-width: 1700px) {
-                .chooseitem {
-                    display: block;
-                }
-            }
 
             .title {
                 p {
@@ -147,13 +135,19 @@
 
                     .chooseitem {
                         margin-top: 0;
-                        height: 30px;
+                        flex-wrap: nowrap;
+                        margin-top: 7.5px;
+
+                        @media (max-width: 1440px) {
+                            &:first-child {
+                                display: block;
+                            }
+                        }
                     }
 
                     .chooseitem:last-child {
                         margin-top: 7.5px;
                         flex-wrap: nowrap;
-                        height: 30px;
 
                         .create {
                             width: 13%;
@@ -251,7 +245,6 @@
                 }
 
                 .chooseitem {
-                    margin-top: 10px;
                     flex-wrap: wrap;
 
                     select {
@@ -362,7 +355,10 @@
         .bar {
             padding: 0px 100px;
 
-            @media (max-width: 600px) {
+            @media (max-width: 800px) {
+                padding: 0px 30px;
+            }
+            @media (max-width: 700px) {
                 padding: 0px 10px;
             }
 
@@ -425,6 +421,24 @@
 
                     @media (max-width: 950px) {
                         width: 100%;
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            margin-top: 15px;
+            nav {
+                @media (max-width: 420px) {
+                    li {
+                        width: 31.5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+        
+                    ul li button {
+                        transform: scale(0.85);
                     }
                 }
             }
